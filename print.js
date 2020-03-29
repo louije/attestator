@@ -3,7 +3,8 @@ const escpos = require('escpos');
 escpos.USB = require('escpos-usb');
 const device  = new escpos.USB();
 // const device  = new escpos.Network('localhost');
-// const device  = new escpos.Serial('/dev/usb/lp0');
+// escpos.SerialPort = require('escpos-serialport');
+// const device  = new escpos.SerialPort('/dev/usb/lp0');
 
 const print = (name = "__________________", birthdate = "____/____/____", birthplace = "________________", reasons = ["com", "jog"]) => {
   const options = { encoding: "858" }
