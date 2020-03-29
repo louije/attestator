@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ATTESTATOR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style type="text/css">
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      padding: 0 1rem 1rem 1rem;
+      margin: 0;
+      font-family: "Gill Sans";
+      color: #424B54;
+      background: #C5C0C6;
+    }
+    h1 {
+      color: white;
+      margin: .5rem;
+    }
+    fieldset {
+      border: 0;
+      border-radius: 8px;
+      padding: .5rem;
+      margin: 1rem 0;
+    }
+    fieldset input[type=radio] {
+      display: none;
+    }
+    input[type=radio]:checked + label {
+      background: rgba(0,0,0,.5);
+      color: white;
+    }
+    .peeps {
+      background: #D5ACA9;
+      display: grid;
+      grid: 1fr 1fr / 1fr 1fr;
+    }
+    .peeps > label {
+      text-align: center;
+      padding: .5rem;
+      border-radius: 8px;
+      transition: all .25s ease;
+      margin: .5rem;
+    }
+    .deets {
+      background: #8EB8E5;
+    }
+    .deets > label {
+      border-radius: 8px;
+      display: block;
+      padding: .5rem .5rem;
+    }
+    hr {
+      border: .5px solid white;
+    }
+    [type=submit] {
+      width: 100%;
+      border-radius: 8px;
+      appearance: none;
+      text-align: center;
+      background: #D7B377;
+      border: none;
+      padding: .25rem .5rem;
+      font: bold 2rem/1 "Gill Sans";
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Attestator</h1>
+    <form action="/print" method="GET">
+      <fieldset class="peeps">
+          <input type="radio" name="nickname" value="cathy" id="cathy">
+          <label for="cathy">👩🏻‍🏫<br>Cathy</label>
+
+          <input type="radio" name="nickname" value="lucile" id="lucile">
+          <label for="lucile">👩🏻‍💻<br>Brøde Pute</label>
+
+          <input type="radio" name="nickname" value="barney" id="barney">
+          <label for="barney">🎤<br>BB Chevrotine</label>
+
+          <input type="radio" name="nickname" value="louije" id="louije">
+          <label for="louije">🦁<br>Louije</label>
+      </fieldset>
+      <fieldset class="deets">
+          <input type="radio" name="reasons" value="com" id="com">
+          <label for="com">Achat de fournitures nécessaires</label>
+
+          <input type="radio" name="reasons" value="jog" id="jog">
+          <label for="jog">Activité physique</label>
+
+          <hr>
+
+          <input type="radio" name="reasons" value="pro" id="pro">
+          <label for="pro">Activité professionnelle</label>
+
+
+          <input type="radio" name="reasons" value="med" id="med">
+          <label for="med">Consultation médicale</label>
+
+          <input type="radio" name="reasons" value="fam" id="fam">
+          <label for="fam">Motif familial impérieux</label>
+
+
+          <input type="radio" name="reasons" value="jud" id="jud">
+          <label for="jud">Convocation judiciaire</label>
+
+          <input type="radio" name="reasons" value="mis" id="mis">
+          <label for="mis">Mission d'intérêt général</label>
+      </fieldset>
+      <input type="submit" value="🖨 Imprimer">
+    </form>
+  </main>
+</body>
+</html>
