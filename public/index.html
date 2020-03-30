@@ -21,7 +21,10 @@
     }
     h1 {
       color: white;
-      margin: .5rem;
+      margin: 1rem 0 0 0;
+    }
+    h1 img {
+      width: 100%;
     }
     fieldset {
       border: .125rem solid white;
@@ -40,6 +43,7 @@
       /*background: #D5ACA9;*/
       display: grid;
       grid: 1fr 1fr / 1fr 1fr;
+      margin-top: 0;
     }
     @media (min-width: 45rem) {
       .peeps {
@@ -80,7 +84,7 @@
 </head>
 <body>
   <main>
-    <h1>Attestator</h1>
+    <h1><img src="attestator.png" alt="Attestator logo"></h1>
     <form action="/print" method="GET">
       <fieldset class="peeps">
           <input type="radio" name="nickname" value="cathy" id="cathy">
