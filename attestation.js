@@ -73,7 +73,14 @@ sur demande de l'autorité administrative.
   return out;
 }
 
-let stamp = (date = (new Date()).toLocaleString('fr', {dateStyle:"long", timeStyle: 'short'})) => `
+let options = {
+  year: 'numeric', month: 'numeric', day: 'numeric',
+  hour: 'numeric', minute: 'numeric',
+  hour12: false
+};
+let french = new Intl.DateTimeFormat('fr', options);
+
+let stamp = (date = french.format(new Date())) => `
 Fait à Maisons-Laffitte
 Le ${date}
 `;

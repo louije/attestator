@@ -1,3 +1,5 @@
+require("./intl-support")();
+
 const print = require("./print");
 
 const path = require("path");
