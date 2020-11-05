@@ -6,7 +6,7 @@ const device  = new escpos.USB();
 // escpos.SerialPort = require('escpos-serialport');
 // const device  = new escpos.SerialPort('/dev/usb/lp0');
 
-const print = (name = "__________________", birthdate = "____/____/____", birthplace = "________________", reasons = ["com", "jog"]) => {
+const print = (name = "__________________", birthdate = "____/____/____", birthplace = "________________", reasons = ["com", "jog"], address, city) => {
   const options = { encoding: "858" }
   const printer = new escpos.Printer(device, options);
   
@@ -20,10 +20,10 @@ const print = (name = "__________________", birthdate = "____/____/____", birthp
     .font('b')
 
     .text(attestation.header)
-    .style('B').text(attestation.id(name, birthdate, birthplace)).style('NORMAL')
+    .style('B').text(attestation.id(name, birthdate, birthplace, address)).style('NORMAL')
     .text(attestation.certify)
     .text(attestation.reasons(reasons))
-    .style('B').text(attestation.stamp()).style('NORMAL')
+    .style('B').text(attestation.stamp(city)).style('NORMAL')
     .text(attestation.signature)
     
     .cut()

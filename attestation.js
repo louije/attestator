@@ -9,10 +9,10 @@ face à l'épidémie de Covid19 dans le cadre
 de l'état d'urgence sanitaire
 `
 
-let id = (name, birthdate, birthplace) => `
+let id = (name, birthdate, birthplace, address) => `
 Je soussigné(e) ${name}
 né(e) le ${birthdate} à ${birthplace},
-demeurant au 1 impasse Marie-Thérèse à Maisons-Laffitte,
+demeurant au ${address},
 `
 
 
@@ -80,8 +80,8 @@ let options = {
 };
 let french = new Intl.DateTimeFormat('fr', options);
 
-let stamp = (date = french.format(new Date())) => `
-Fait à Maisons-Laffitte
+let stamp = (city, date = french.format(new Date())) => `
+Fait ${city}
 Le ${date}
 `;
 
