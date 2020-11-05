@@ -3,10 +3,10 @@ ATTESTATION DE DÉPLACEMENT DÉROGATOIRE
 `
 
 let header = `
-En application de l'article 3 du décret du 23 mars 2020
+En application du décret n°2020-1310 du 29 octobre 2020
 prescrivant les mesures générales nécessaires pour faire
-face à l'épidémie de Covid19 dans le cadre
-de l'état d'urgence sanitaire
+face à l'épidémie de Covid19 dans le cadre de l'état
+d'urgence sanitaire
 `
 
 let id = (name, birthdate, birthplace, address) => `
@@ -18,49 +18,53 @@ demeurant au ${address},
 
 let certify = `
 certifie que mon déplacement est lié au motif suivant
-(cocher la case) autorisé par l'article 3 du décret
-du 23 mars 2020 prescrivant les mesures générales
-nécessaires pour faire face à l'épidémie de Covid19
-dans le cadre de l'état d'urgence sanitaire (1) :
+(cocher la case) autorisé par le décret n°2020-1310
+du 29 octobre 2020 prescrivant les mesures générales
+nécessaires pour faire face à l’épidémie de Covid19
+dans le cadre de l'état d'urgence sanitaire :
 `
 let reasons = (r) => {
   if (!Array.isArray(r)) { r = [r] }
   let texts = {
-    pro: `Déplacements entre le domicile et le lieu d'exercice
-de l'activité professionnelle, lorsqu'ils sont
-indispensables à l'exercice d'activités ne pouvant
-être organisées sous forme de télétravail ou déplacements
-professionnels ne pouvant être différés (2).
+    pro: `Déplacements entre le domicile et le lieu d’exercice
+de l’activité professionnelle ou un établissement
+d’enseignement ou de formation, déplacements
+professionnels ne pouvant être différés,
+déplacements pour un concours ou un examen.
 `,
     com: `Déplacements pour effectuer des achats de fournitures
-nécessaires à l'activité professionnelle et des achats
-de première nécessité (3) dans des établissements dont
-les activités demeurent autorisées
-(liste sur gouvernement.fr).
+nécessaires à l'activité professionnelle, des achats
+de première nécessité dans des établissements dont
+les activités demeurent autorisées, le retrait
+de commande et les livraisons à domicile.
 `,
-    med: `Consultations et soins ne pouvant être assurés
-à distance et ne pouvant être différés ;
-consultations et soins des patients
-atteints d'une affection de longue durée.
+    med: `Consultations, examens et soins ne pouvant être ni assurés
+à distance ni différés et l’achat de médicaments.
 `,
     fam: `Déplacements pour motif familial impérieux,
 pour l'assistance aux personnes vulnérables
-ou la garde d'enfants.
+et précaires ou la garde d'enfants.
+`,
+    handi: `Déplacement des personnes en situation
+de handicap et leur accompagnant.
 `,
     jog: `Déplacements brefs, dans la limite d'une heure
-quotidienne et dans un rayon maximal d'un
-kilomètre autour du domicile, liés soit
-à l'activité physique individuelle des personnes,
-à l'exclusion de toute pratique sportive collective
-et de toute proximité avec d'autres personnes,
-soit à la promenade avec les seules personnes
-regroupées dans un même domicile, soit aux
-besoins des animaux de compagnie.
+quotidienne et dans un rayon maximal d'un kilomètre
+autour du domicile, liés soit à l'activité physique
+individuelle des personnes, à l'exclusion de toute
+pratique sportive collective et de toute proximité
+avec d'autres personnes, soit à la promenade avec
+les seules personnes regroupées dans un même domicile,
+soit aux besoins des animaux de compagnie.
 `,
-    jud: `Convocation judiciaire ou administrative.
+    jud: `Convocation judiciaire ou administrative
+et pour se rendre dans un service public.
 `,
     mis: `Participation à des missions d'intérêt général
 sur demande de l'autorité administrative.
+`,
+    scol: `Déplacement pour chercher les enfants à l’école
+et à l’occasion de leurs activités périscolaires.
 `
   }
   if (r.length === 1) {
